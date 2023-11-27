@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ContactsApp.Service
@@ -42,11 +43,10 @@ namespace ContactsApp.Service
             var contactList = JsonConvert.DeserializeObject<List<ContactModel>>(jsonString);
             if (inputModel.iContactId > 0)
             {
-                foreach (var contact in contactList.Where(obj => obj.iContactId == inputModel.iContactId))
-                {
-                    contact.strFirstName = inputModel.strFirstName;
-                    contact.strLastName = inputModel.strLastName;
-                }
+                var contact = contactList.Where(obj => obj.iContactId == inputModel.iContactId).FirstOrDefault();
+                contact.strFirstName = inputModel.strFirstName;
+                contact.strLastName = inputModel.strLastName;
+                contact.strEmail = inputModel.strEmail;
                 string output = JsonConvert.SerializeObject(contactList, Formatting.Indented);
                 await File.WriteAllTextAsync(jsonFile, output);
             }
@@ -78,6 +78,36 @@ namespace ContactsApp.Service
             }
             string output = JsonConvert.SerializeObject(contactList, Formatting.Indented);
             await File.WriteAllTextAsync(jsonFile, output);
+            return true;
+        }
+
+        /// <summary>
+        /// To check for Duplicate email
+        /// </summary>
+        /// <param name="iContactId"></param>
+        /// <param name="email"></param>
+        /// <param name="jsonFile"></param>
+        /// <returns></returns>
+        public async Task<bool> EmailExists(int iContactId, string email, string jsonFile)
+        {
+            var jsonString = await System.IO.File.ReadAllTextAsync(jsonFile);
+            var contactList = JsonConvert.DeserializeObject<List<ContactModel>>(jsonString);
+            if (iContactId > 0)
+            {
+                var contact = contactList.Where(obj => obj.iContactId != iContactId && obj.strEmail.ToLower() == email && !obj.tIsDeleted).FirstOrDefault();
+                if (contact != null && contact.iContactId > 0)
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                var contact = contactList.Where(obj => obj.strEmail.ToLower() == email && !obj.tIsDeleted).FirstOrDefault();
+                if (contact != null && contact.iContactId > 0)
+                {
+                    return false;
+                }
+            }
             return true;
         }
     }

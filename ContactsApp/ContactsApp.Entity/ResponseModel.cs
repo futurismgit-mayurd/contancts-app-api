@@ -5,6 +5,9 @@ using System.Text;
 
 namespace ContactsApp.Entity
 {
+    /// <summary>
+    /// Common response model which will be for every response
+    /// </summary>
     public class ResponseModel
     {
         #region Properties
@@ -53,6 +56,10 @@ namespace ContactsApp.Entity
                     IsSuccess = false;
                     StatusCode = HttpStatusCode.Unauthorized;
                     break;
+                case ResponseStatus.Duplicate:
+                    IsSuccess = false;
+                    StatusCode = HttpStatusCode.BadRequest;
+                    break;
 
             }
         }
@@ -99,6 +106,7 @@ namespace ContactsApp.Entity
         Success,
         Failure,
         InvalidInput,
-        UnAuthorized
+        UnAuthorized,
+        Duplicate
     }
 }

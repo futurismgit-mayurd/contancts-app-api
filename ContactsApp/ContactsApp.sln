@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsApp.API", "ContactsApp.API\ContactsApp.API.csproj", "{9167C382-6861-406F-8C88-2FB634FF8649}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactsApp.API", "ContactsApp.API\ContactsApp.API.csproj", "{9167C382-6861-406F-8C88-2FB634FF8649}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsApp.Service", "ContactsApp.Service\ContactsApp.Service.csproj", "{C47FA3C5-53AE-4839-A92C-743EF1CD47B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactsApp.Service", "ContactsApp.Service\ContactsApp.Service.csproj", "{C47FA3C5-53AE-4839-A92C-743EF1CD47B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsApp.Repository", "ContactsApp.Repository\ContactsApp.Repository.csproj", "{DE4C584C-7CF3-4945-889D-CA9858315EAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactsApp.Repository", "ContactsApp.Repository\ContactsApp.Repository.csproj", "{DE4C584C-7CF3-4945-889D-CA9858315EAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsApp.Entity", "ContactsApp.Entity\ContactsApp.Entity.csproj", "{DB03C707-2524-48EF-8DF7-EF8B2D8F467E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactsApp.Entity", "ContactsApp.Entity\ContactsApp.Entity.csproj", "{DB03C707-2524-48EF-8DF7-EF8B2D8F467E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsApp.Common", "ContactsApp.Common\ContactsApp.Common.csproj", "{BCAEFA97-2CF5-405B-A6C3-24C3AF18B912}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactsApp.Common", "ContactsApp.Common\ContactsApp.Common.csproj", "{BCAEFA97-2CF5-405B-A6C3-24C3AF18B912}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

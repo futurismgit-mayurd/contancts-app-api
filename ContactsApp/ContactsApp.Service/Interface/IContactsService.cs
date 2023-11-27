@@ -12,5 +12,6 @@ namespace ContactsApp.Service
         public Task<List<ContactModel>> GetContacts(string jsonFile);
         public Task<bool> CreateUpdateContact(ContactModel inputModel, string jsonFile);
         public Task<bool> DeleteContact(int iContactId, string jsonFile);
+        public Task<bool> EmailExists(int iContactId, string email, string jsonFile);
     }
 }

@@ -26,7 +26,13 @@ namespace ContactsApp.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-
+            services.AddCors(o => o.AddPolicy("ContactsPolicy", builder =>
+            {
+                builder.SetIsOriginAllowed(_ => true)
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials();
+            }));
             services.AddLogging(log =>
             {
                 log.AddConsole();
@@ -43,11 +49,11 @@ namespace ContactsApp.API
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.ConfigureCustomExceptionMiddleware();
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseCors("ContactsPolicy");
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
