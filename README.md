@@ -5,6 +5,8 @@ Clone URL "https://github.com/pavanfuturism/contancts-app-api.git"
 Version : .Net Core 6.0
 VS Studio: VS 2022 community edition
 
+Json File Path: ContactsApp.API/Output/contacts.json
+
 Installation
 1. Download the VS 2022 Community Edition from "https://visualstudio.microsoft.com/free-developer-offers/"
 2. Install VS 2022
