@@ -1,0 +1,16 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/ContactsApp/.vs
+/ContactsApp/ContactsApp.API/bin/Debug/net6.0
+/ContactsApp/ContactsApp.API/obj
+/ContactsApp/ContactsApp.Common/bin/Debug/net6.0
+/ContactsApp/ContactsApp.Common/obj
+/ContactsApp/ContactsApp.Entity/bin/Debug/net6.0
+/ContactsApp/ContactsApp.Entity/obj
+/ContactsApp/ContactsApp.Repository/bin/Debug/net6.0
+/ContactsApp/ContactsApp.Repository/obj
+/ContactsApp/ContactsApp.Service/bin/Debug/net6.0
+/ContactsApp/ContactsApp.Service/obj
